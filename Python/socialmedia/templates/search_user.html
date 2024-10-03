@@ -1,0 +1,20 @@
+<h1 style="color: blue; font-size: 36px;">Search Results for "{{ query }}"</h1>
+<div class="container" style="background-color: #f2f2f2; padding: 20px;">
+    <h2 style="color: #00698f;">User Profiles</h2>
+    
+    <table class="table" style="width: 100%; border-collapse: collapse;">
+        
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td><img src="{{ user.profileimg.url }}" alt="Profile Image" height="100px" width="100px">
+                <h1 style="margin: 0;"><strong><a href="/profile/{{user.user.username}}" style="text-decoration: none; color: #337ab7;">@{{user.user.username}}</a> </strong></h1></td>  
+            </tr><br>
+            {% endfor %}
+            
+            
+        </tbody>
+    </table>
+</div>
+<a href="{% url 'home' %}">Back to Profile</a>
+
